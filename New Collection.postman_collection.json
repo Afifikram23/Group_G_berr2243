@@ -1,0 +1,520 @@
+{
+  "info": {
+    "_postman_id": "582b9678-b687-46cb-b433-8bbc79e87621",
+    "name": "Ride Hailing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Customer Registration",
+      "id": "7ff098ad-264c-47a6-98c4-dd16a47fd0f5",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Azyz\",\r\n    \"email\": \"Azyz@gmail.com\",\r\n    \"password\": \"789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Login",
+      "id": "fa3cdb87-b8a4-4a45-8cfe-17e59e70fc69",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"Ikram@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"type\": \"customer\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer View Profile",
+      "id": "ad600319-c345-4a76-8439-17728e2006c5",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/customer/693c2b7dfbe684b375a1ee9f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "customer",
+            "693c2b7dfbe684b375a1ee9f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Update",
+      "id": "9dfe9ff6-c976-436d-b096-0adb75e002fb",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"ikramm Updated\",\r\n    \"phone\": \"+60142962278\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/customers/693c2accf25f7db54c1939de",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "customers",
+            "693c2accf25f7db54c1939de"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Delete",
+      "id": "b94bbf69-1c07-43a9-a9d4-32f317ebda8a",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/customer/693c2ba2fbe684b375a1eea1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "customer",
+            "693c2ba2fbe684b375a1eea1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Registration",
+      "id": "0e8e44ed-c619-4132-bc75-394dfa8916a4",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"lutfi\",\r\n    \"email\": \"lutfi@grab.com\",\r\n    \"password\": \"222\",\r\n    \"vehicleType\": \"Proton Iriz\",\r\n    \"status\": \"available\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/drivers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Login",
+      "id": "9f89dd07-0d32-49a3-adb6-7e95b01d8059",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"muthu@grab.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"driver\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Profile View",
+      "id": "3a17795b-0cea-4446-838c-a7f53d7db889",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/drivers/693c311592dfe9edf5d522e0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers",
+            "693c311592dfe9edf5d522e0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Update",
+      "id": "fa34da15-6ac6-4bad-835c-499848ef11d2",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"vehicleType\": \"Honda City\",\r\n    \"name\": \"Ahmeng Updated\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/drivers/693c312c92dfe9edf5d522e2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers",
+            "693c312c92dfe9edf5d522e2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Driver Status",
+      "id": "70cce270-1dbd-4213-afd6-5734555a613b",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"status\": \"Update busy\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/drivers/693c311592dfe9edf5d522e0/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers",
+            "693c311592dfe9edf5d522e0",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Booking  (Create)",
+      "id": "6140c6e5-9537-4316-8060-602a43346c11",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"customerId\": \"693c35e9f8e2e9589f67d00d\",\r\n    \"pickupLocation\": \"Bukit jalil\",\r\n    \"dropoffLocation\": \"Terengganu\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Booking  (View)",
+      "id": "cf5e9327-3c68-4621-b7f9-1594cc5b907c",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/bookings/693c359ff8e2e9589f67d009",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "693c359ff8e2e9589f67d009"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Booking  (Update)",
+      "id": "84a7c69f-522f-48be-b012-11196c265971",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"dropoffLocation\": \"Update KLIA 2\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings/693c35cff8e2e9589f67d00b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "693c35cff8e2e9589f67d00b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Booking  (Delete)",
+      "id": "deeafb74-fcc1-4501-98ca-abe49e49aea6",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/bookings/693c359ff8e2e9589f67d009",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "693c359ff8e2e9589f67d009"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Rating",
+      "id": "77c56245-3b92-4ff6-aef7-c1cbb9f75005",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rating\": \"2.9\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings/693c380b5f0866215ba663d0/rating",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "693c380b5f0866215ba663d0",
+            "rating"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Link the Driver to the Booking",
+      "id": "58d18f82-4fbd-4df0-93a4-1d21cd792c0c",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"driverId\": \"693c35cff8e2e9589f67d00b\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings/693c35cff8e2e9589f67d00b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "693c35cff8e2e9589f67d00b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View Driver Ratings",
+      "id": "24be5e12-b2a4-469a-91ee-b31194fb4622",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/drivers/693c35cff8e2e9589f67d00b/ratings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers",
+            "693c35cff8e2e9589f67d00b",
+            "ratings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin System  Management",
+      "id": "be723612-beb2-4e15-9293-e75b57a5f707",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/admin/system-management",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "admin",
+            "system-management"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Block User (Admin)",
+      "id": "7b94dc73-7469-4e3a-8f7b-c093ba65cee0",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/admin/users/693c35e9f8e2e9589f67d00d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "admin",
+            "users",
+            "693c35e9f8e2e9589f67d00d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "412b2e40-4251-427d-8568-faa126befc14",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
