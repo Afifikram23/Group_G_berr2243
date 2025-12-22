@@ -13,7 +13,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"Azyz\",\r\n    \"email\": \"Azyz@gmail.com\",\r\n    \"password\": \"789\"\r\n}",
+          "raw": "{\r\n    \"name\": \"ADMIN\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin123\",\r\n    \"role\": \"admin\",\r\n    \"phone\": \"+60130987898\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -42,7 +42,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"email\": \"Ikram@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"type\": \"customer\"\r\n}",
+          "raw": "{\r\n    \"email\": \"razinn@gmail.com\",\r\n    \"password\": \"razinn545\",\r\n    \"type\": \"customer\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -144,7 +144,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"lutfi\",\r\n    \"email\": \"lutfi@grab.com\",\r\n    \"password\": \"222\",\r\n    \"vehicleType\": \"Proton Iriz\",\r\n    \"status\": \"available\"\r\n}",
+          "raw": "{\r\n    \"name\": \"kamali\",\r\n    \"email\": \"kamali@grab.com\",\r\n    \"password\": \"1245\",\r\n    \"vehicleType\": \"honda jazz\",\r\n    \"status\": \"available\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -465,6 +465,16 @@
       "name": "Admin System  Management",
       "id": "be723612-beb2-4e15-9293-e75b57a5f707",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzNzc2Y2M1YzQ0MjdjYjRhMTM4YjkiLCJyb2xlIjoiY3VzdG9tZXJzIiwiaWF0IjoxNzY2MDI5NTAwLCJleHAiOjE3NjYwMzMxMDB9.3qvrL9WbWmA62z-X80Y4AaFmA-X_lEyyCel4JKMibUk\"",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [],
         "url": {
@@ -505,8 +515,130 @@
       "response": []
     },
     {
+      "name": "Register Admin",
+      "id": "7d77c112-62fc-4c2d-92c3-2c32e711bc47",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Lab Admin\",\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"securePassword123\",\r\n    \"role\": \"admin\",\r\n    \"phone\": \"+60123456789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Admin",
+      "id": "f8d525a8-d8f3-4a4d-941e-2d2f51dd4901",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"securePassword123\",\r\n    \"type\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access a Protected Admin Route",
+      "id": "d594dedc-655f-4cf1-9183-b2ed53a18e2c",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzN2UxYzJiNmQ3OTVlYTQ0MmVhMmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjYwMzA5NDYsImV4cCI6MTc2NjAzNDU0Nn0.W-WW9nJ2NULtPKhjUeFkP8ayaJQJVIbFlv4Ce_YFrjM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/admin/system-management",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "admin",
+            "system-management"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Protected Endpoint (Admin Delete)",
+      "id": "39196d99-ba32-439e-9da5-e81439fc7846",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzN2UxYzJiNmQ3OTVlYTQ0MmVhMmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjYwMzA5NDYsImV4cCI6MTc2NjAzNDU0Nn0.W-WW9nJ2NULtPKhjUeFkP8ayaJQJVIbFlv4Ce_YFrjM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/admin/users/69437b22c5c4427cb4a138c6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "admin",
+            "users",
+            "69437b22c5c4427cb4a138c6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
       "name": "New Request",
-      "id": "412b2e40-4251-427d-8568-faa126befc14",
+      "id": "9ee8486c-a0d1-44f3-86f1-84e823c9d020",
       "request": {
         "method": "GET",
         "header": [],
