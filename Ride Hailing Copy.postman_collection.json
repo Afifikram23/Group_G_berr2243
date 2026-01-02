@@ -1,0 +1,907 @@
+{
+  "info": {
+    "_postman_id": "6e953ae0-140b-4d05-9f65-bb9116628e37",
+    "name": "Ride Hailing Copy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Customer Registration",
+      "id": "57e1ab10-0f26-4887-8c62-3f9cbb235aac",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"b\",\r\n    \"email\": \"B@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"role\": \"customer\",\r\n    \"phone\": \"+60130987898\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Login",
+      "id": "3413226d-966c-49a2-9740-358228dfb740",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"A@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"customer\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer View Profile",
+      "id": "d1da7059-8ea6-4f82-96be-c45fe9c6dbfc",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NWZiMWIwMGIyNTc4YmYxNThiNTAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjcyNjgyOTUsImV4cCI6MTc2NzI3MTg5NX0.c8UAEpA-dYpyWqRohLJUeB35LogZUd6FaUNI7dSVbUw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/customer/69565fb1b00b2578bf158b50",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "customer",
+            "69565fb1b00b2578bf158b50"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Update",
+      "id": "aef115af-79e4-408a-82ab-e27229b3e01b",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NWZiMWIwMGIyNTc4YmYxNThiNTAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjcyNjgyOTUsImV4cCI6MTc2NzI3MTg5NX0.c8UAEpA-dYpyWqRohLJUeB35LogZUd6FaUNI7dSVbUw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"aa lps update\",\r\n  \"phone\": \"+60142567867\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/customer/69565fb1b00b2578bf158b50",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "customer",
+            "69565fb1b00b2578bf158b50"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Registration",
+      "id": "cbe8f2cb-91e9-4c4c-8166-051254e2e765",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"b\",\r\n  \"email\": \"b@grab.com\",\r\n  \"password\": \"000\",\r\n  \"vehicleType\": \"Proton Saga\",\r\n  \"role\": \"driver\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/drivers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Login",
+      "id": "8b4d2c81-3aea-4019-8126-fafbbcf27edb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"b@grab.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"driver\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Profile View",
+      "id": "59454901-0208-4fa5-b2da-c55515bb110f",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/drivers/693c311592dfe9edf5d522e0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers",
+            "693c311592dfe9edf5d522e0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Update",
+      "id": "5a0d51dd-843c-4f43-b39c-4603d2baad06",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQ5N2ExNDI3ZmM4Yjc5MDdmMmZmYmQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzY2NDIzMTczLCJleHAiOjE3NjY0MjY3NzN9.57xk6rM7GW1oEjojxePp8vqkKLL7Ryx4UH304_5ny4c",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"vehicleType\": \"Honda Civic\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/drivers/69497a1427fc8b7907f2ffbd",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers",
+            "69497a1427fc8b7907f2ffbd"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Driver Status",
+      "id": "c4542584-bbc4-4f43-9c84-1786941c2f23",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"status\": \"Update busy\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/drivers/693c311592dfe9edf5d522e0/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "drivers",
+            "693c311592dfe9edf5d522e0",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Booking  (Create)",
+      "id": "1ac07de6-0e62-47df-8779-a543e282cde2",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NWZiMWIwMGIyNTc4YmYxNThiNTAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjcyNjk4NTAsImV4cCI6MTc2NzI3MzQ1MH0.5EsIiIVEGewGaeLOGbS2h-GN0AsFBw2on_rlU3QwNIA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"pickupLocation\": \"Kolej Kediaman Tuah\",\r\n    \"dropoffLocation\": \"MITC\",\r\n    \"fare\": 8.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Booking  (View)",
+      "id": "0aa71a52-3c88-43e5-ace8-2a91ef295384",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/bookings/693c359ff8e2e9589f67d009",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "693c359ff8e2e9589f67d009"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Booking  (Update)",
+      "id": "d71c2b53-7454-4f52-b96e-6f61c6ffedbf",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"dropoffLocation\": \"Update KLIA 2\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings/693c35cff8e2e9589f67d00b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "693c35cff8e2e9589f67d00b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Cari Job",
+      "id": "5bd39d16-7245-476f-8e3e-389273cc3d11",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NjVmNGVjMGExNmIyOTg4NjBmNGYiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzY3MjY5ODg3LCJleHAiOjE3NjcyNzM0ODd9._EYGCyYgZW8ot7dPC_zUycUV4YKY94-8IhV15tv5Iog",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/bookings/pending",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "pending"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Accept Job",
+      "id": "f5e741c0-fd90-49d7-b429-eab9752a9aa2",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NjVmNGVjMGExNmIyOTg4NjBmNGYiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzY3MjY5ODg3LCJleHAiOjE3NjcyNzM0ODd9._EYGCyYgZW8ot7dPC_zUycUV4YKY94-8IhV15tv5Iog",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rating\": \"2.9\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings/695669e565a7fbfee4029be7/accept",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "695669e565a7fbfee4029be7",
+            "accept"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Check Status (History)",
+      "id": "26b26495-6492-432c-bb51-c4a3087065fe",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NWZiMWIwMGIyNTc4YmYxNThiNTAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjcyNjk4NTAsImV4cCI6MTc2NzI3MzQ1MH0.5EsIiIVEGewGaeLOGbS2h-GN0AsFBw2on_rlU3QwNIA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"driverId\": \"693c35cff8e2e9589f67d00b\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings/my-history",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "my-history"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer Bagi Rating",
+      "id": "15aac6b3-227a-4d02-b2c8-f462d7642afd",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NWZiMWIwMGIyNTc4YmYxNThiNTAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjcyNjk4NTAsImV4cCI6MTc2NzI3MzQ1MH0.5EsIiIVEGewGaeLOGbS2h-GN0AsFBw2on_rlU3QwNIA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rating\": 3,\r\n    \"review\": \"Kereta bersih tapi driver bising!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings/695669e565a7fbfee4029be7/rate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings",
+            "695669e565a7fbfee4029be7",
+            "rate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin System  Management",
+      "id": "0ab6cba0-acdc-43fd-a31d-6efe73821666",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzNzc2Y2M1YzQ0MjdjYjRhMTM4YjkiLCJyb2xlIjoiY3VzdG9tZXJzIiwiaWF0IjoxNzY2MDI5NTAwLCJleHAiOjE3NjYwMzMxMDB9.3qvrL9WbWmA62z-X80Y4AaFmA-X_lEyyCel4JKMibUk\"",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/admin/system-management",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "admin",
+            "system-management"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Block User (Admin)",
+      "id": "1df45457-7389-414f-bca9-1d8721cbda00",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/admin/users/693c35e9f8e2e9589f67d00d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "admin",
+            "users",
+            "693c35e9f8e2e9589f67d00d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Admin",
+      "id": "4069096d-3aa8-4938-a663-665135bee5b0",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"ikram Admin\",\r\n    \"email\": \"m@example.com\",\r\n    \"password\": \"000\",\r\n    \"role\": \"admin\",\r\n    \"phone\": \"+60123456789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Admin",
+      "id": "45add0cd-5977-471c-8fc7-0b1e565b05a1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"m@example.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access a Protected Admin Route",
+      "id": "3031a18b-12e6-46a5-8f56-8ff6f66db5ba",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzN2UxYzJiNmQ3OTVlYTQ0MmVhMmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjYwMzA5NDYsImV4cCI6MTc2NjAzNDU0Nn0.W-WW9nJ2NULtPKhjUeFkP8ayaJQJVIbFlv4Ce_YFrjM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/admin/system-management",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "admin",
+            "system-management"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Protected Endpoint (Admin Delete)",
+      "id": "5ac571c8-6b90-46f6-8f4a-65fd3738dadf",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NWQ0YjMxNTIyZDQ1ZWQyZjRiY2YiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjcyNjc2OTcsImV4cCI6MTc2NzI3MTI5N30.hxyzpQ9LyDjTHzGAjGiE9AkW8zHK6NVaR9NlM54NdYY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/admin/users/69437984c5c4427cb4a138c2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "admin",
+            "users",
+            "69437984c5c4427cb4a138c2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "admin login",
+      "id": "ea9e7fb9-11d5-493c-8509-04614a96e370",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"adminW7@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "customer login a",
+      "id": "642f9320-8b22-43ea-9849-e5b022523b3e",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"A@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"customer\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "customer login b",
+      "id": "ad399b0e-e51d-4d44-a92b-ede8ca487fc8",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"B@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"customer\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "booking A",
+      "id": "e72d072d-9408-4757-b971-df0bfb3957f6",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2NWZiMWIwMGIyNTc4YmYxNThiNTAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjczMzY0MDIsImV4cCI6MTc2NzM0MDAwMn0.MDBCykERCdY1gDdzooBG9i3NwHjAZryZlIu8OeGennI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"pickupLocation\": \"UTeM\",\r\n    \"dropoffLocation\": \"Ayer Keroh\",\r\n    \"fare\": 40,\r\n    \"distance\": 20\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "booking b",
+      "id": "b739055e-dfdd-4d46-a07d-ab4edd275053",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU3NmE1ZGJlMjRlMTQ5OWEyMGU4NjYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjczMzY2MDUsImV4cCI6MTc2NzM0MDIwNX0.fuPVL_xGmSRc12XvRynMGJ4UXHJYfnfRw95VYZPBa_Q",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"pickupLocation\": \"Kolej Tuah\",\r\n    \"dropoffLocation\": \"Kafe\",\r\n    \"fare\": 10,\r\n    \"distance\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "VIEW ANALYTICS",
+      "id": "2d625658-d72a-4c3d-b96a-e6892ce00e10",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU3NjgyOGJlMjRlMTQ5OWEyMGU4NjAiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjczMzYzMjIsImV4cCI6MTc2NzMzOTkyMn0.zOk1oJ4hSzj2E_3UczAJ8xbFdIkJmyMbVaofcizM_Fo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/analytics/passengers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "analytics",
+            "passengers"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
