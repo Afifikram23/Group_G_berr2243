@@ -425,6 +425,18 @@ app.get('/analytics/passengers', authenticate, authorize(['admin']), async (req,
     }
 });
 
+// ==========================================
+// 8. HOMEPAGE ROUTE (Server Health Check)
+// ==========================================
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: "WELCOME TO GROUP G RIDE API SERVER 🚀",
+        status: "Server is Running",
+        authors: "AFIFIKRAM, AZYZUL DAN RAZIN",
+        description: "Backend API for Ride Hailing System (BENR2423)"
+    });
+});
+
 // Start Server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
