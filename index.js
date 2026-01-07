@@ -233,7 +233,6 @@ app.patch('/drivers/:id', authenticate, async (req, res) => {
 // UPDATED: Now accepts 'distance' for Lab Week 7 Analysis
 app.post('/bookings', authenticate, authorize(['customer']), async (req, res) => {
     try {
-        // PERUBAHAN DI SINI: Extract 'distance' dari req.body
         const { pickupLocation, dropoffLocation, fare, distance } = req.body;
 
         const newBooking = new Booking({
@@ -241,7 +240,7 @@ app.post('/bookings', authenticate, authorize(['customer']), async (req, res) =>
             pickupLocation,
             dropoffLocation,
             fare,
-            distance, // PERUBAHAN DI SINI: Simpan nilai distance ke database
+            distance, 
             status: 'pending'
         });
 
@@ -376,43 +375,37 @@ app.post('/bookings/:id/rate', authenticate, authorize(['customer']), async (req
 // 7. ANALYTICS ROUTES (LAB WEEK 7)
 // ==========================================
 
-// [GET] Passenger Analytics (Aggregation Pipeline)
-// Requirement: Analyze passenger ride data using $lookup, $unwind, $group, $project
 app.get('/analytics/passengers', authenticate, authorize(['admin']), async (req, res) => {
     try {
         const stats = await Customer.aggregate([
             {
-                // Stage 1: Join Customer dengan Booking
                 $lookup: {
-                    from: 'bookings',        // Nama collection booking dalam database
-                    localField: '_id',       // ID pada Customer
-                    foreignField: 'customer',// Field dalam Booking yang link ke Customer
-                    as: 'rideData'           // Output array baru
+                    from: 'bookings',
+                    localField: '_id',
+                    foreignField: 'customer',
+                    as: 'rideData'
                 }
             },
             {
-                // Stage 2: Pecahkan array rideData
                 $unwind: {
                     path: '$rideData',
-                    preserveNullAndEmptyArrays: false // Hanya customer yang pernah booking sahaja
+                    preserveNullAndEmptyArrays: false
                 }
             },
             {
-                // Stage 3: Grouping & Calculation
                 $group: {
-                    _id: "$name", // Group ikut nama customer
-                    totalRides: { $sum: 1 },             // Kira jumlah booking
-                    totalFare: { $sum: "$rideData.fare" }, // Tambah semua tambang
-                    avgDistance: { $avg: "$rideData.distance" } // Kira purata jarak
+                    _id: "$name",
+                    totalRides: { $sum: 1 },
+                    totalFare: { $sum: "$rideData.fare" },
+                    avgDistance: { $avg: "$rideData.distance" }
                 }
             },
             {
-                // Stage 4: Format Output (Project)
                 $project: {
-                    _id: 0,              // Hide ID
-                    name: "$_id",        // Rename _id -> name
+                    _id: 0,
+                    name: "$_id",
                     totalRides: 1,
-                    totalFare: { $round: ["$totalFare", 2] }, // Bundarkan 2 titik perpuluhan
+                    totalFare: { $round: ["$totalFare", 2] },
                     avgDistance: { $round: ["$avgDistance", 2] }
                 }
             }
@@ -426,15 +419,114 @@ app.get('/analytics/passengers', authenticate, authorize(['admin']), async (req,
 });
 
 // ==========================================
-// 8. HOMEPAGE ROUTE (Server Health Check)
+// 8. HOMEPAGE ROUTE (PROFESSIONAL UI)
 // ==========================================
 app.get('/', (req, res) => {
-    res.status(200).json({
-        message: "WELCOME TO GROUP G RIDE API SERVER 🚀",
-        status: "Server is Running",
-        authors: "AFIFIKRAM, AZYZUL DAN RAZIN",
-        description: "Backend API for Ride Hailing System (BENR2423)"
-    });
+    res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Group G API Server</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark Theme Professional */
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+            .container {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px); /* Glassmorphism Effect */
+                border-radius: 20px;
+                padding: 50px;
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                text-align: center;
+                max-width: 600px;
+                width: 90%;
+            }
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+                background: -webkit-linear-gradient(#00c6ff, #0072ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 800;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+                color: #e0e0e0;
+                letter-spacing: 1px;
+            }
+            .status-badge {
+                background-color: #2ecc71;
+                color: #000;
+                padding: 8px 20px;
+                border-radius: 50px;
+                font-weight: bold;
+                display: inline-block;
+                margin-bottom: 30px;
+                box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+            }
+            .team {
+                margin-top: 40px;
+                border-top: 1px solid rgba(255,255,255,0.2);
+                padding-top: 20px;
+            }
+            .team h3 {
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                color: #aaa;
+                margin-bottom: 10px;
+            }
+            .members {
+                font-size: 1.1rem;
+                font-weight: 500;
+                line-height: 1.6;
+            }
+            .api-info {
+                font-size: 0.8rem;
+                margin-top: 30px;
+                color: #888;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>GROUP G RIDE</h1>
+            <p class="subtitle">ENTERPRISE API SERVER</p>
+            
+            <div class="status-badge">
+                ● SYSTEM OPERATIONAL
+            </div>
+
+            <p>Welcome to the backend infrastructure for the Ride Hailing System (BENR2423).</p>
+
+            <div class="team">
+                <h3>Developed By Engineering Team:</h3>
+                <div class="members">
+                    Afifikram<br>
+                    Azyzul<br>
+                    Razin
+                </div>
+            </div>
+
+            <div class="api-info">
+                Secure Connection via Azure Cloud • Node.js Environment
+            </div>
+        </div>
+    </body>
+    </html>
+    `);
 });
 
 // Start Server
