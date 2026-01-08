@@ -529,6 +529,111 @@ app.get('/', (req, res) => {
     `);
 });
 
+// ==========================================
+// 9. WEB DASHBOARD (VISUAL UNTUK BROWSER)
+// ==========================================
+app.get('/dashboard', async (req, res) => {
+    try {
+        // 1. Tarik Data dari Database
+        const stats = {
+            totalAdmins: await Admin.countDocuments(),
+            totalCustomers: await Customer.countDocuments(),
+            totalDrivers: await Driver.countDocuments(),
+            totalBookings: await Booking.countDocuments()
+        };
+        const recentActivity = await Booking.find().sort({ createdAt: -1 }).limit(5);
+
+        // 2. Masukkan Data ke dalam HTML (Template yang sama macam Postman)
+        const html = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Admin Dashboard</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; padding: 20px; }
+                .header { margin-bottom: 20px; }
+                .header h2 { color: #1a1a1a; margin: 0; }
+                .badge { background: #28a745; color: white; padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+                
+                .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
+                .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid #007bff; }
+                .card h3 { font-size: 36px; margin: 10px 0; color: #007bff; }
+                .card p { color: #666; margin: 0; font-weight: 600; text-transform: uppercase; font-size: 12px; }
+
+                .activity-section { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow-x: auto; }
+                table { width: 100%; border-collapse: collapse; margin-top: 15px; min-width: 600px; }
+                th { text-align: left; padding: 12px; background: #f8f9fa; color: #666; font-size: 14px; }
+                td { padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; }
+                
+                .status-pill { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+                .pending { background: #fff3cd; color: #856404; }
+                .accepted { background: #cce5ff; color: #004085; }
+                .completed { background: #d4edda; color: #155724; }
+                .cancelled { background: #f8d7da; color: #721c24; }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h2>🚀 Admin Dashboard <span class="badge">LIVE SYSTEM</span></h2>
+                <p style="color: #666; font-size: 14px;">Real-time Data from Azure Cloud Database</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="card" style="border-color: #007bff">
+                    <h3>${stats.totalBookings}</h3>
+                    <p>Total Bookings</p>
+                </div>
+                <div class="card" style="border-color: #28a745">
+                    <h3>${stats.totalCustomers}</h3>
+                    <p>Customers</p>
+                </div>
+                <div class="card" style="border-color: #ffc107">
+                    <h3>${stats.totalDrivers}</h3>
+                    <p>Drivers</p>
+                </div>
+                <div class="card" style="border-color: #dc3545">
+                    <h3>${stats.totalAdmins}</h3>
+                    <p>Admins</p>
+                </div>
+            </div>
+
+            <div class="activity-section">
+                <h3 style="margin: 0; color: #333;">Recent Booking Activity</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Pickup</th>
+                            <th>Destination</th>
+                            <th>Fare (RM)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${recentActivity.map(ride => `
+                        <tr>
+                            <td>${new Date(ride.createdAt).toLocaleDateString()}</td>
+                            <td>${ride.pickupLocation}</td>
+                            <td>${ride.dropoffLocation}</td>
+                            <td>${ride.fare.toFixed(2)}</td>
+                            <td><span class="status-pill ${ride.status}">${ride.status}</span></td>
+                        </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </body>
+        </html>
+        `;
+
+        res.send(html); // Hantar HTML ke Browser
+
+    } catch (err) {
+        res.status(500).send("Error loading dashboard: " + err.message);
+    }
+});
+
 // Start Server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
