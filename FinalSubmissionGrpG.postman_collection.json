@@ -1,0 +1,937 @@
+{
+  "info": {
+    "_postman_id": "b89dba6b-3043-4382-bf7d-632cdbb4021e",
+    "name": "GroupGEhailingProject",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register Admin",
+      "id": "71db8c8d-9ba4-4ef9-8f32-a85461cdf2d0",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Big Boss\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"role\": \"admin\",\r\n    \"phone\": \"+60190000000\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/users",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Admin",
+      "id": "dc889ac6-2901-469f-8b59-ce4a9a338245",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/auth/login",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Customer A",
+      "id": "bea80177-820c-4751-8516-286440d05fa3",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"ali\",\r\n    \"email\": \"ali@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"role\": \"customer\",\r\n    \"phone\": \"+60123456789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/users",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Customer A",
+      "id": "cc85984e-89d4-44c2-8f23-d8923f193d66",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"ikram\",\r\n    \"email\": \"ikram@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"role\": \"customer\",\r\n    \"phone\": \"+60123456789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/auth/login",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Customer B",
+      "id": "82f0dc72-3b27-4729-85fc-f6f056f31b61",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"azyz\",\r\n    \"email\": \"azyz@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"role\": \"customer\",\r\n    \"phone\": \"+60123456980\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/users",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Customer B",
+      "id": "f3a4f31e-7839-4c38-8b1e-bb8fd202fae5",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"azyz\",\r\n    \"email\": \"azyz@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"role\": \"customer\",\r\n    \"phone\": \"+60123456789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/auth/login",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Driver",
+      "id": "03a7745d-56c0-459a-a3cd-55f9b598f8c3",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"razin\",\r\n    \"email\": \"razin@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"vehicleType\": \"Proton Saga\",\r\n    \"plateNumber\": \"JEV 8888\",\r\n    \"phoneNumber\": \"0199999999\",\r\n    \"role\": \"driver\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/drivers",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "drivers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Driver",
+      "id": "1ba913bb-0b1a-4b17-82f9-4a4e94c49b7a",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"razin@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"type\": \"driver\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/auth/login",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Booking Customer A",
+      "id": "4104e5fa-9ab2-4e43-8673-a2716ccd8a57",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2RlNDc5MmY4YmY1MWFlNDVkMDAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Njc4ODE0OTgsImV4cCI6MTc2Nzg4NTA5OH0.2dFg0haGd8LnYJLtg-SFUOwqLMv16E2EOm9qtsyVI50",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"pickupLocation\": \"UTeM\",\r\n    \"dropoffLocation\": \"Muar\",\r\n    \"fare\": 230.00,\r\n    \"distance\": 80.0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Booking Customer B",
+      "id": "8fe10f5b-bf56-4108-adfc-d69711124725",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2Y2NTc5MmY4YmY1MWFlNDVkMDciLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Njc4MDA3MzgsImV4cCI6MTc2NzgwNDMzOH0.Wo2YRCQW0ZIv3ehr-K7uFmYixAU3Vp2aa8YTO3Gt-f8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"pickupLocation\": \"Kolej Kediaman\",\r\n    \"dropoffLocation\": \"Library\",\r\n    \"fare\": 5.00,\r\n    \"distance\": 2.0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver View Pending Jobs",
+      "id": "83cdc64a-e21b-4d5f-ac25-d3058309d595",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2ZlMjc5MmY4YmY1MWFlNDVkMGEiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzY3ODgxNTA2LCJleHAiOjE3Njc4ODUxMDZ9.GAr8_5HbJNmB75CmtfDZ7aSkTCfXUZb-9buindntN7M",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings/pending",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings",
+            "pending"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Accept Job Cust A",
+      "id": "aa7e2658-8847-4cbd-ae17-ff1ed3d992d1",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2ZlMjc5MmY4YmY1MWFlNDVkMGEiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzY3ODAwOTAwLCJleHAiOjE3Njc4MDQ1MDB9.Xb0SPA97qyBuqQg_PLtiiDLV09SBhSKbQ-K9fww65r8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings/695e8105792f8bf51ae45d0e/accept",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings",
+            "695e8105792f8bf51ae45d0e",
+            "accept"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RATE DRIVER Cust A Rate",
+      "id": "223928e8-154c-452f-97d0-b164508f81db",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2RlNDc5MmY4YmY1MWFlNDVkMDAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Njc4NDM1OTYsImV4cCI6MTc2Nzg0NzE5Nn0.3cQm6bXUGXgyRly6bsIObhytfP9yJklQwUf3ossbQS4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rating\": 5,\r\n    \"review\": \"Mantap bossku!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings/695e8105792f8bf51ae45d0e/rate",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings",
+            "695e8105792f8bf51ae45d0e",
+            "rate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Driver Accept Job Cust B",
+      "id": "89fe882f-4873-4a13-b3c9-60c778f4c8ac",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2ZlMjc5MmY4YmY1MWFlNDVkMGEiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzY3ODAwOTAwLCJleHAiOjE3Njc4MDQ1MDB9.Xb0SPA97qyBuqQg_PLtiiDLV09SBhSKbQ-K9fww65r8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings/695e817c792f8bf51ae45d10/accept",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings",
+            "695e817c792f8bf51ae45d10",
+            "accept"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RATE DRIVER Cust B Rate",
+      "id": "03028f29-aabe-4aa3-aefa-871353867c6f",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2Y2NTc5MmY4YmY1MWFlNDVkMDciLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Njc4MDA3MzgsImV4cCI6MTc2NzgwNDMzOH0.Wo2YRCQW0ZIv3ehr-K7uFmYixAU3Vp2aa8YTO3Gt-f8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rating\": 3.5,\r\n    \"review\": \"Bawak laju nk mampos!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings/695e817c792f8bf51ae45d10/rate",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings",
+            "695e817c792f8bf51ae45d10",
+            "rate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin Check Analytics",
+      "id": "a5843037-dfae-4453-82e3-0e12375124b3",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2NiMTc5MmY4YmY1MWFlNDVjZmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njc4MDAyMDksImV4cCI6MTc2NzgwMzgwOX0.OD6f-by9kRtC3HDH_6phoaMpXOa4MWtyQCCbH4_b400",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/analytics/passengers",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "analytics",
+            "passengers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Booking Customer A 2",
+      "id": "22a5e61f-87b3-4099-95cd-381b0a0b8689",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2RlNDc5MmY4YmY1MWFlNDVkMDAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Njc4MDA1OTEsImV4cCI6MTc2NzgwNDE5MX0.n_zJrS4oGmCqwGEvVpU85J0-MyOzPsIMaxbTKsQBNwE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"pickupLocation\": \"UTeM\",\r\n    \"dropoffLocation\": \"Seremban\",\r\n    \"fare\": 180,\r\n    \"distance\": 190.0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cust A Cancel Booking",
+      "id": "3aa98446-71ff-4288-b688-ad983317af25",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2RlNDc5MmY4YmY1MWFlNDVkMDAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Njc4MDA1OTEsImV4cCI6MTc2NzgwNDE5MX0.n_zJrS4oGmCqwGEvVpU85J0-MyOzPsIMaxbTKsQBNwE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings/695e87b8792f8bf51ae45d28/cancel",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings",
+            "695e87b8792f8bf51ae45d28",
+            "cancel"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Customer View History",
+      "id": "7b72cd9f-ab53-4a75-a0ee-b7b73047d171",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2RlNDc5MmY4YmY1MWFlNDVkMDAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3Njc4MDA1OTEsImV4cCI6MTc2NzgwNDE5MX0.n_zJrS4oGmCqwGEvVpU85J0-MyOzPsIMaxbTKsQBNwE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/bookings/my-history",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "bookings",
+            "my-history"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin System Management",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "746271a3-13ad-467b-bbec-841c8a7edb5e",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "cca74585-1734-4f46-a145-71c829fee77c",
+            "exec": [
+              "// Ambil data JSON dari server\r",
+              "var response = pm.response.json();\r",
+              "\r",
+              "// Ini coding HTML & CSS untuk lukis Dashboard\r",
+              "var template = `\r",
+              "    <style>\r",
+              "        body {\r",
+              "            font-family: 'Segoe UI', sans-serif;\r",
+              "            background-color: #f0f2f5;\r",
+              "            padding: 20px;\r",
+              "        }\r",
+              "        .header {\r",
+              "            margin-bottom: 20px;\r",
+              "        }\r",
+              "        .header h2 {\r",
+              "            color: #1a1a1a;\r",
+              "            margin: 0;\r",
+              "        }\r",
+              "        .badge {\r",
+              "            background: #28a745;\r",
+              "            color: white;\r",
+              "            padding: 5px 10px;\r",
+              "            border-radius: 15px;\r",
+              "            font-size: 12px;\r",
+              "            font-weight: bold;\r",
+              "        }\r",
+              "        \r",
+              "        /* KOTAK STATS (4 KOTAK) */\r",
+              "        .stats-grid {\r",
+              "            display: grid;\r",
+              "            grid-template-columns: repeat(4, 1fr);\r",
+              "            gap: 15px;\r",
+              "            margin-bottom: 30px;\r",
+              "        }\r",
+              "        .card {\r",
+              "            background: white;\r",
+              "            padding: 20px;\r",
+              "            border-radius: 10px;\r",
+              "            box-shadow: 0 2px 5px rgba(0,0,0,0.05);\r",
+              "            text-align: center;\r",
+              "            border-bottom: 4px solid #007bff;\r",
+              "        }\r",
+              "        .card h3 {\r",
+              "            font-size: 36px;\r",
+              "            margin: 10px 0;\r",
+              "            color: #007bff;\r",
+              "        }\r",
+              "        .card p {\r",
+              "            color: #666;\r",
+              "            margin: 0;\r",
+              "            font-weight: 600;\r",
+              "            text-transform: uppercase;\r",
+              "            font-size: 12px;\r",
+              "        }\r",
+              "\r",
+              "        /* TABLE RECENT ACTIVITY */\r",
+              "        .activity-section {\r",
+              "            background: white;\r",
+              "            padding: 20px;\r",
+              "            border-radius: 10px;\r",
+              "            box-shadow: 0 2px 5px rgba(0,0,0,0.05);\r",
+              "        }\r",
+              "        table {\r",
+              "            width: 100%;\r",
+              "            border-collapse: collapse;\r",
+              "            margin-top: 15px;\r",
+              "        }\r",
+              "        th {\r",
+              "            text-align: left;\r",
+              "            padding: 12px;\r",
+              "            background: #f8f9fa;\r",
+              "            color: #666;\r",
+              "            font-size: 14px;\r",
+              "        }\r",
+              "        td {\r",
+              "            padding: 12px;\r",
+              "            border-bottom: 1px solid #eee;\r",
+              "            font-size: 14px;\r",
+              "        }\r",
+              "        .status-pill {\r",
+              "            padding: 4px 12px;\r",
+              "            border-radius: 20px;\r",
+              "            font-size: 12px;\r",
+              "            font-weight: bold;\r",
+              "        }\r",
+              "        .pending { background: #fff3cd; color: #856404; }\r",
+              "        .accepted { background: #cce5ff; color: #004085; }\r",
+              "        .completed { background: #d4edda; color: #155724; }\r",
+              "        .cancelled { background: #f8d7da; color: #721c24; }\r",
+              "    </style>\r",
+              "\r",
+              "    <div class=\"header\">\r",
+              "        <h2>🚀 Admin Dashboard <span class=\"badge\">{{status}}</span></h2>\r",
+              "        <p style=\"color: #666; font-size: 14px;\">System Overview & Real-time Statistics</p>\r",
+              "    </div>\r",
+              "\r",
+              "    <div class=\"stats-grid\">\r",
+              "        <div class=\"card\" style=\"border-color: #007bff\">\r",
+              "            <h3>{{statistics.totalBookings}}</h3>\r",
+              "            <p>Total Bookings</p>\r",
+              "        </div>\r",
+              "        <div class=\"card\" style=\"border-color: #28a745\">\r",
+              "            <h3>{{statistics.totalCustomers}}</h3>\r",
+              "            <p>Customers</p>\r",
+              "        </div>\r",
+              "        <div class=\"card\" style=\"border-color: #ffc107\">\r",
+              "            <h3>{{statistics.totalDrivers}}</h3>\r",
+              "            <p>Drivers</p>\r",
+              "        </div>\r",
+              "        <div class=\"card\" style=\"border-color: #dc3545\">\r",
+              "            <h3>{{statistics.totalAdmins}}</h3>\r",
+              "            <p>Admins</p>\r",
+              "        </div>\r",
+              "    </div>\r",
+              "\r",
+              "    <div class=\"activity-section\">\r",
+              "        <h3 style=\"margin: 0; color: #333;\">Recent Booking Activity</h3>\r",
+              "        <table>\r",
+              "            <thead>\r",
+              "                <tr>\r",
+              "                    <th>Date</th>\r",
+              "                    <th>Pickup</th>\r",
+              "                    <th>Destination</th>\r",
+              "                    <th>Fare (RM)</th>\r",
+              "                    <th>Status</th>\r",
+              "                </tr>\r",
+              "            </thead>\r",
+              "            <tbody>\r",
+              "                {{#each recentActivity}}\r",
+              "                <tr>\r",
+              "                    <td>{{createdAt}}</td>\r",
+              "                    <td>{{pickupLocation}}</td>\r",
+              "                    <td>{{dropoffLocation}}</td>\r",
+              "                    <td>{{fare}}</td>\r",
+              "                    <td><span class=\"status-pill {{status}}\">{{status}}</span></td>\r",
+              "                </tr>\r",
+              "                {{/each}}\r",
+              "            </tbody>\r",
+              "        </table>\r",
+              "    </div>\r",
+              "`;\r",
+              "\r",
+              "// Arahkan Postman guna template di atas\r",
+              "pm.visualizer.set(template, response);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "55ccd2a5-eb4a-4908-8f6b-7a9f7868a5dc",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2NiMTc5MmY4YmY1MWFlNDVjZmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njc4ODIwODQsImV4cCI6MTc2Nzg4NTY4NH0.Fj5C-3w96Uaudq4GNpHFvuYUlS-fha_5MC9QBhesM20",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/admin/system-management",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "admin",
+            "system-management"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Customer Account",
+      "id": "eac9ad7b-19c1-4879-8100-5d3e35ffbe2c",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTVlN2NiMTc5MmY4YmY1MWFlNDVjZmQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njc4ODAyMjMsImV4cCI6MTc2Nzg4MzgyM30.vNwVnWr886VZI1g-g-qNN91GCDwFtPDb3856E7ZaDg0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/users/695fb5ab1791dafe25b3bd12",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "users",
+            "695fb5ab1791dafe25b3bd12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Admin Copy",
+      "id": "86809bbc-cbde-4021-8c14-63a3dfb8aec6",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Big Boss\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"000\",\r\n    \"role\": \"admin\",\r\n    \"phone\": \"+60190000000\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/users",
+          "protocol": "https",
+          "host": [
+            "benr2423-group-g-dbdagbejapbneuhp",
+            "malaysiawest-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
