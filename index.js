@@ -230,7 +230,6 @@ app.patch('/drivers/:id', authenticate, async (req, res) => {
 // ==========================================
 
 // [POST] Create New Booking (Customer Only)
-// UPDATED: Now accepts 'distance' for Lab Week 7 Analysis
 app.post('/bookings', authenticate, authorize(['customer']), async (req, res) => {
     try {
         const { pickupLocation, dropoffLocation, fare, distance } = req.body;
@@ -434,7 +433,7 @@ app.get('/', (req, res) => {
                 margin: 0;
                 padding: 0;
                 font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark Theme Professional */
+                background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
                 height: 100vh;
                 display: flex;
                 justify-content: center;
@@ -443,7 +442,7 @@ app.get('/', (req, res) => {
             }
             .container {
                 background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px); /* Glassmorphism Effect */
+                backdrop-filter: blur(10px);
                 border-radius: 20px;
                 padding: 50px;
                 box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -534,7 +533,6 @@ app.get('/', (req, res) => {
 // ==========================================
 app.get('/dashboard', async (req, res) => {
     try {
-        // 1. Tarik Data dari Database
         const stats = {
             totalAdmins: await Admin.countDocuments(),
             totalCustomers: await Customer.countDocuments(),
@@ -543,7 +541,6 @@ app.get('/dashboard', async (req, res) => {
         };
         const recentActivity = await Booking.find().sort({ createdAt: -1 }).limit(5);
 
-        // 2. Masukkan Data ke dalam HTML (Template yang sama macam Postman)
         const html = `
         <!DOCTYPE html>
         <html>
@@ -627,24 +624,30 @@ app.get('/dashboard', async (req, res) => {
         </html>
         `;
 
-        res.send(html); // Hantar HTML ke Browser
+        res.send(html);
 
     } catch (err) {
         res.status(500).send("Error loading dashboard: " + err.message);
     }
 });
 
-// DELETE User (Admin/Customer delete account)
+// ==========================================
+// 10. DELETE ROUTE (FIXED)
+// ==========================================
+
+// DELETE Customer (Updated: Now uses Customer model)
 app.delete('/users/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const deletedUser = await User.findByIdAndDelete(id);
+    
+    // ✅ FIX: Guna 'Customer' bukan 'User'
+    const deletedUser = await Customer.findByIdAndDelete(id);
     
     if (!deletedUser) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    res.status(200).json({ message: "User account deleted successfully", deletedUser });
+    res.status(200).json({ message: "User account deleted successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
