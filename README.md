@@ -4,8 +4,13 @@ Backend infrastructure for a Ride Hailing Application developed for **BERR2423**
 This system manages Users (Customers/Drivers), Bookings, and Administrative Analytics using a RESTful API architecture.
 
 ## 🚀 Live Server
-**Base URL:** https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net
-📊 Admin Dashboard (Visual Interface): https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/dashboard
+Use the links below to access the deployed application:
+
+* **🔌 API Base URL (Server):**
+    [https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net](https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net)
+
+* **📊 Admin Dashboard (Visual Interface):**
+    [https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/dashboard](https://benr2423-group-g-dbdagbejapbneuhp.malaysiawest-01.azurewebsites.net/dashboard)
 
 ## 🛠 Tech Stack
 - **Runtime:** Node.js
